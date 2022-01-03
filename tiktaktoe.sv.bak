@@ -1,0 +1,14 @@
+module tiktaktoe(player,reset,clk,out);
+
+input logic player;    // 0- player 1
+							  // 1- player 2
+input logic reset,clk;
+input logic [3:0]position;   //the block picker from 0 - 9 
+output logic [8:0]out;
+
+
+always_ff@(posedge clk ,posedge reset)
+if(player == 1'b0)
+	begin
+		if(position == 4'b0000)
+			out[1]=
